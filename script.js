@@ -25,12 +25,12 @@ today = new Date();
 var times = today - thisSecond2;
 times = Math.round(times) / 3600000 / 24;
 times = Math.round(times);
-console.log("Разница - " + times);
+// console.log("Разница - " + times);
 var steps = times * 50 / 366;
-console.log("Шаг - " + steps);
+// console.log("Шаг - " + steps);
 step = 50 / 366;
 
-move(block2, block, 0, 50, step, 31, steps);
+move(block2, block, 0, 50, step, 31536000000, steps);
 
 function move(element2, element, from2, to, step, delay, startbb = -1) {
 
@@ -48,7 +48,7 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
         ourStep = 0;
     } else {
         position += step;
-        console.log("Позиция - " + position);
+        // console.log("Позиция - " + position);
 
     }
 
@@ -59,10 +59,12 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     var timerId = setTimeout(function () {
         move(element2, element, from22, to, step, delay);
     }, delay);
-    document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position * 2) + "%";
-    if(position == 100) {
+
+    console.log("position 1" + position);
+    if(position == 49.99641202185792) {
+    position = Math.round(position);
     clearTimeout(timerId);
-        console.log("timerId" + timerId);
-    steps = 50;
+    summ = 100;
 }
+    var summ =  document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position * 2) + "%";
 }
