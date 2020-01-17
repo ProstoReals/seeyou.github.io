@@ -23,11 +23,11 @@
     <span id="t"></span>
 
     <div class="slide1" id="1">
-        <img src="http://placehold.it/100.jpg"  />
+        <img src="R.png"  />
     </div>
     <span id="block_summ"></span>
     <div class="slide2" id="2">
-        <img src="http://placehold.it/100.jpg"  />
+        <img src="l.png"  />
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
