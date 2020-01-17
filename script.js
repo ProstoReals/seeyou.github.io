@@ -1,7 +1,6 @@
 timeend= new Date();
 timeend= new Date(timeend.getYear()>1900?(timeend.getYear()+1):(timeend.getYear()+1901),0,1);
 
-alert("sfdf");
 function time() {
     today = new Date();
     today = Math.floor((timeend - today) / 1000);
@@ -31,7 +30,7 @@ console.log("Разница - " + times);
 var steps = times * 50 / 366;
 console.log("Шаг - " + steps);
 step = 50 / 366;
-if(steps == 49.04021202185792) {
+if(position == 100) {
     clearTimeout(timerId);
     steps = 50;
 }
@@ -64,5 +63,5 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     var timerId = setTimeout(function () {
         move(element2, element, from22, to, step, delay);
     }, delay);
-    document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position) + "%";
+    document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position * 2) + "%";
 }
