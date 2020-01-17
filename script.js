@@ -25,10 +25,10 @@ var thisSecond2 = new Date(2020,0,1);
 console.log("Date - " + thisSecond2);
 today = new Date();
 var times = today - thisSecond2;
-times = Math.round(times) / 3600000 / 24;
+times = Math.round(times) / 3600000;
 times = Math.round(times);
 console.log("Разница - " + times);
-var steps = times * 50 / 366;
+var steps = times * 50 / 8760;
 console.log("Шаг - " + steps);
 step = 50 / 366;
 
