@@ -20,10 +20,12 @@
 .slide1 {
     position: absolute;
     top: 25%;
+    width: 50%;
     display: block;
 }
 .slide2 {
     position: absolute;
     top: 25%;
+    width: 50%;
     display: block;
 }
