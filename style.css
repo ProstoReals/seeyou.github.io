@@ -1,0 +1,31 @@
+#t, #block_summ
+{
+    font-size: 50px;
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+
+    text-align: center;
+    display: block;
+    background: linear-gradient(90deg, #fff 50%, #000 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#block_summ {
+    top: 65%!important;
+    font-size: 20px;
+    font-weight: bold;
+}
+.slide1 {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    display: block;
+}
+.slide2 {
+    position: absolute;
+    top: 200px;
+    right: 200px;
+    display: block;
+}
