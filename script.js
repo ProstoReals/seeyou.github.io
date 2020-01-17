@@ -39,6 +39,7 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     let position = parseFloat(element.style.left, 10);
     var from22 = from2;
     var from = from22;
+    console.log("from - " + from22);
 
     if (startbb > 0 ) {from = startbb;}
 
@@ -49,7 +50,7 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
         ourStep = 0;
     } else {
         position += step;
-        console.log("Позиция 12.47 - " + position);
+        console.log("Позиция - " + position);
 
     }
 
