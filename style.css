@@ -1,4 +1,4 @@
-#t, #block_summ
+#t
 {
     font-size: 40px;
     text-transform: uppercase;
@@ -16,6 +16,15 @@
     bottom: 0!important;
     font-size: 20px;
     font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: block;
+    background: linear-gradient(90deg, #fff 50%, #000 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 }
 .slide1 {
     position: absolute;
@@ -25,7 +34,6 @@
 .slide2 {
     position: absolute;
     top: 25%;
-    
     display: block;
 }
 .slide2 img {
