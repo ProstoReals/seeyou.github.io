@@ -1,10 +1,10 @@
 #t, #block_summ
 {
-    font-size: 50px;
+    font-size: 40px;
     text-transform: uppercase;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 60%;
 
     text-align: center;
     display: block;
@@ -13,19 +13,17 @@
     -webkit-text-fill-color: transparent;
 }
 #block_summ {
-    top: 65%!important;
+    top: 75%!important;
     font-size: 20px;
     font-weight: bold;
 }
 .slide1 {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 25%;
     display: block;
 }
 .slide2 {
     position: absolute;
-    top: 10%;
-    right: 10%;
+    top: 25%;
     display: block;
 }
