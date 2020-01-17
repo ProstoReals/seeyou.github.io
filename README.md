@@ -21,7 +21,7 @@
     </div>
 
     <span id="t"></span>
-
+fdfd
     <div class="slide1" id="1">
         <img src="R.png"  />
     </div>
