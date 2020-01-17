@@ -63,6 +63,7 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position * 2) + "%";
     if(position == 100) {
     clearTimeout(timerId);
+        console.log(timerId);
     steps = 50;
 }
 }
