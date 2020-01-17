@@ -31,7 +31,10 @@ console.log("Разница - " + times);
 var steps = times * 50 / 366;
 console.log("Шаг - " + steps);
 step = 50 / 366;
-
+if(steps == 49.04021202185792) {
+    clearTimeout(timerId);
+    steps = 50;
+}
 move(block2, block, 0, 50, step, 31, steps);
 
 function move(element2, element, from2, to, step, delay, startbb = -1) {
@@ -58,7 +61,7 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     element.style.left = position + "%";
     element2.style.right = position + "%";
     //    setInterval(function () {
-    setTimeout(function () {
+    var timerId = setTimeout(function () {
         move(element2, element, from22, to, step, delay);
     }, delay);
     document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position) + "%";
