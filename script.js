@@ -29,7 +29,7 @@ times = Math.round(times) / 3600000 / 24;
 times = Math.round(times);
 console.log("Разница - " + times);
 var steps = times * 50 / 366;
-console.log("Шаг 1 - " + steps);
+console.log("Шаг - " + steps);
 step = 50 / 366;
 
 move(block2, block, 0, 50, step, 31622400000, steps);
