@@ -13,6 +13,7 @@ function time() {
     today = Math.floor(today / 24);
     timestr = today + " Дней " + thour + " Часов " + tmin + " Минут " + tsec + " Секунд ";
     document.getElementById('t').innerHTML = timestr;
+    document.getElementById('title').innerHTML = "Осталось дней: " + today;
     window.setTimeout("time()", 1000);
 }
 
@@ -67,4 +68,6 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
     summ = 100;
 }
     var summ =  document.getElementById('block_summ').innerHTML= "Пройдено " + parseInt(position * 2) + "%";
+
+
 }
