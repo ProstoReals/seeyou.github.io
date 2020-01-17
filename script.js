@@ -1,6 +1,6 @@
 timeend= new Date();
 timeend= new Date(timeend.getYear()>1900?(timeend.getYear()+1):(timeend.getYear()+1901),0,1);
-
+alert("dfdf");
 function time() {
     today = new Date();
     today = Math.floor((timeend - today) / 1000);
