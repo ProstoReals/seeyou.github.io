@@ -28,6 +28,12 @@
     
     display: block;
 }
+.slide2 img {
+    float:right;
+}
+.slide1 img {
+    float:left;
+}
 .slide2 img, .slide1 img {
     width: 50%;
 }
