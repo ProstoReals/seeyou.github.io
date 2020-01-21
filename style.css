@@ -48,4 +48,5 @@ audio {
     position: absolute;
     z-index: 999;
     height: 20px;
+    bottom: 0!important;
 }
