@@ -16,10 +16,8 @@
     <source src="billie-eilish-i-love-you(mp3-top.info).mp3">
 </audio>
     <div class="black" style="color: #fff; background: #000; width: 50%; position:fixed; height: 100%;">
-        <canvas id="l"></canvas>
     </div>
     <div class="white" style="width: 50%; position:fixed; height: 100%; margin-left: 50%">
-        <canvas id="r"></canvas>
     </div>
 
 <span id="t"></span>
