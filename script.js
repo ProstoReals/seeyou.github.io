@@ -70,72 +70,109 @@ function move(element2, element, from2, to, step, delay, startbb = -1) {
 
 }
 
-((l)=>{
-    let $ = l.getContext('2d'),
-        w = l.width = window.innerWidth,
-        h = l.height = window.innerHeight,
-        pi2 = Math.PI*2,
-        random = t=>Math.random()*t,
-        binRandom = (f)=>Math.random()<f,
-        arr = new Array(500).fill().map((p)=>{
-            return {
-                p: {x: random(w), y: random(h)},
-                v: {x: random(.5) * (binRandom(.5)?1:-1), y: random(.5) * (binRandom(.5)?1:-1)},
-                s: random(1)+2,
-                o: random(1)+.3
-            }
-        });
-    function draw(){
-        (h !== innerHeight || w!==innerWidth) && (w=c.width=innerWidth,h=c.height=innerHeight);
-        $.fillStyle="#000";
-        $.fillRect(0,0,w,h);
-        arr.forEach(p=>{
-            p.p.x+=p.v.x;
-            p.p.y+=p.v.y;
-            if(p.p.x > w || p.p.x < 0) p.v.x *=-1;
-            if(p.p.y > h || p.p.y < 0) p.v.y *=-1;
-            $.beginPath();
-            $.arc(p.p.x,p.p.y,p.s,0,pi2);
-            $.closePath();
-            $.fillStyle = "rgba(255,255,255,"+p.o+")";
-            $.fill();
-        })
-        requestAnimationFrame(draw)
-    }
-    draw();
-})(l);
+var canvas;
+var context;
+var screenH;
+var screenW;
+var stars = [];
+var fps = 60;
+var numStars = 500;
 
-((r)=>{
-    let $ = r.getContext('2d'),
-        w = r.width = window.innerWidth,
-        h = r.height = window.innerHeight,
-        pi2 = Math.PI*2,
-        random = t=>Math.random()*t,
-        binRandom = (f)=>Math.random()<f,
-        arr = new Array(500).fill().map((p)=>{
-            return {
-                p: {x: random(w), y: random(h)},
-                v: {x: random(.5) * (binRandom(.5)?1:-1), y: random(.5) * (binRandom(.5)?1:-1)},
-                s: random(1)+2,
-                o: random(1)+.3
-            }
-        });
-    function draw(){
-        (h !== innerHeight || w!==innerWidth) && (w=c.width=innerWidth,h=c.height=innerHeight);
-        $.fillStyle="#fff";
-        $.fillRect(0,0,w,h);
-        arr.forEach(p=>{
-            p.p.x+=p.v.x;
-            p.p.y+=p.v.y;
-            if(p.p.x > w || p.p.x < 0) p.v.x *=-1;
-            if(p.p.y > h || p.p.y < 0) p.v.y *=-1;
-            $.beginPath();
-            $.arc(p.p.x,p.p.y,p.s,0,pi2);
-            $.closePath();
-            $.fillStyle = "rgba(0,0,0,"+p.o+")";
-            $.fill();
-        })
-        requestAnimationFrame(draw)
+$('document').ready(function() {
+  
+  // Calculate the screen size
+    screenH = $(window).height();
+    screenW = $(window).width();
+    
+    // Get the canvas
+    canvas = $('#space');
+    
+    // Fill out the canvas
+    canvas.attr('height', screenH);
+    canvas.attr('width', screenW);
+    context = canvas[0].getContext('2d');
+    
+    // Create all the stars
+    for(var i = 0; i < numStars; i++) {
+        var x = Math.round(Math.random() * screenW);
+        var y = Math.round(Math.random() * screenH);
+        var length = 1 + Math.random() * 1.5;
+        var opacity = Math.random();
+        
+        // Create a new star and draw
+        var star = new Star(x, y, length, opacity);
+        
+        // Add the the stars array
+        stars.push(star);
     }
-    draw();
-})(r)
+    
+    animateInterval = setInterval(animate, 1000 / fps);
+});
+
+/**
+ * Animate the canvas
+ */
+function animate() {
+    context.clearRect(0, 0, screenW, screenH);
+    $.each(stars, function() {
+        this.draw(context);
+    })
+}
+
+/* stop Animation */
+function stopAnimation()
+{
+     clearInterval(animateInterval);
+}
+
+//stopAnimation();
+
+function Star(x, y, length, opacity) {
+    this.x = parseInt(x);
+    this.y = parseInt(y);
+    this.length = parseInt(length);
+    this.opacity = opacity;
+    this.factor = 1;
+    this.increment = Math.random() * .10;
+}
+
+Star.prototype.draw = function() {
+    context.rotate((Math.PI * 1 / 10));
+    
+    // Save the context
+    context.save();
+    
+    // move into the middle of the canvas, just to make room
+    context.translate(this.x, this.y);
+    
+    // Change the opacity
+    if(this.opacity > 1) {
+        this.factor = -1;
+    }
+    else if(this.opacity <= 0) {
+        this.factor = 1;
+        
+        this.x = Math.round(Math.random() * screenW);
+        this.y = Math.round(Math.random() * screenH);
+    }
+        
+    this.opacity += this.increment * this.factor;
+    
+    context.beginPath()
+    for (var i = 5; i--;) {
+        context.lineTo(0, this.length);
+        context.translate(0, this.length);
+        context.rotate((Math.PI * 2 / 10));
+        context.lineTo(0, - this.length);
+        context.translate(0, - this.length);
+        context.rotate(-(Math.PI * 6 / 10));
+    }
+    context.lineTo(0, this.length);
+    context.closePath();
+    context.fillStyle = "rgba(255, 255, 255, " + this.opacity + ")";
+    context.shadowBlur = 5;
+    context.shadowColor = '#fff';
+    context.fill();
+    
+    context.restore();
+}
