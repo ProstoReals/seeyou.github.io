@@ -1,3 +1,7 @@
+body {
+    background: url(11.jpg) no-repeat;
+    background-size: cover;
+}
 #t
 {
     font-size: 25px;
@@ -7,7 +11,8 @@
     top: 0%;
     text-align: center;
     display: block;
-    background: linear-gradient(90deg, #fff 50%, #000 50%);
+/*    background: linear-gradient(90deg, #fff 50%, #000 50%);*/
+	background: linear-gradient(90deg, #fff 50%, #fff 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -20,11 +25,13 @@
     position: absolute;
     text-align: center;
     display: block;
-    background: linear-gradient(90deg, #fff 50%, #000 50%);
+    color: #fff;
+/*    background: linear-gradient(90deg, #fff 50%, #000 50%);*/
+	background: linear-gradient(90deg, #fff 50%, #fff 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.slide1 {
+/*.slide1 {
     position: absolute;
     top: 33%;
     display: block;
@@ -39,7 +46,7 @@
 }
 .slide1 img {
     float:left;
-}
+}*/
 .slide2 img, .slide1 img {
     width:  50%;
 }
