@@ -34,7 +34,7 @@ var steps = times * 50 / 366;
 // console.log("Шаг - " + steps);
 step = 50 / 366;
 
-move(block2, block, 0, 50, step, 31536000000, steps);
+move(block2, block, 0, 50, step, 3153600, steps);
 
 function move(element2, element, from2, to, step, delay, startbb = -1) {
 
