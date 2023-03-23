@@ -22,9 +22,7 @@ function time() {
 var block = document.getElementById(1);
 var block2 = document.getElementById(2);
 
-var thisSecond2 = new Date(2022,0,1);
-
-console.log(thisSecond2);
+var thisSecond2 = new Date(2023,0,1);
 
 console.log("Date - " + thisSecond2);
 today = new Date();
