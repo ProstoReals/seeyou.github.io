@@ -31,7 +31,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-/*.slide1 {
+.slide1 {
     position: absolute;
     top: 33%;
     display: block;
@@ -41,7 +41,7 @@ body {
     top: 33%;
     display: block;
 }
-.slide2 img {
+/*.slide2 img {
     float:right;
 }
 .slide1 img {
