@@ -23,7 +23,7 @@
     </div>
     <span id="block_summ"></span>
     <div class="slide2" id="2">
-         <img src="L.png"  /> 
+         <img src="l.png"  /> 
         
     </div>
 <canvas id="space"></canvas>
