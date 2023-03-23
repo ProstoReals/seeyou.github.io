@@ -24,6 +24,8 @@ var block2 = document.getElementById(2);
 
 var thisSecond2 = new Date(2022,0,1);
 
+console.log(thisSecond2);
+
 console.log("Date - " + thisSecond2);
 today = new Date();
 var times = today - thisSecond2;
